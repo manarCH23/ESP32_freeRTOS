@@ -1,6 +1,7 @@
 
 #include <queue.h>
-//#include "Arduino_FreeRTOS.h"
+//#include "Arduino_FreeRTOS.h" in case you are using an Arduino Board
+//LEDs
 #define GREEN 23 
 #define YELLOW 22 
 #define RED 21 
@@ -32,10 +33,9 @@ if(structQueue != NULL){
 }
 
 void loop() {
-  // put your main code here, to run repeatedly:
 
 }
-
+// this task read the internal HAll sensor value
 void Hall(void * pvParameters){
   
   (void) pvParameters;
@@ -49,7 +49,7 @@ void Hall(void * pvParameters){
     
     }
   }
-
+// this task read the internal touch sensor
   void Touch(void * pvParameters){
   
   (void) pvParameters;
@@ -63,7 +63,7 @@ void Hall(void * pvParameters){
     
     }
   }
-
+// task indicates the state of the alarm 
   void Alarming(void * pvParameters){
     (void) pvParameters;
     for(;;){
